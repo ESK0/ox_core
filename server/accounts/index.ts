@@ -44,8 +44,8 @@ export function RemoveAccountBalance(id: number, amount: number, overdraw = fals
   return UpdateBalance(id, amount, 'remove', overdraw, message);
 }
 
-export function TransferAccountBalance(fromId: number, toId: number, amount: number, overdraw = false, message?: string) {
-  return PerformTransaction(fromId, toId, amount, overdraw, message);
+export function TransferAccountBalance(fromId: number, toId: number, amount: number, overdraw = false, actorId?: number, message?: string, note?: string) {
+  return PerformTransaction(fromId, toId, amount, overdraw, actorId, message, note);
 }
 
 export function CreateAccount(charId: number, label: string, shared?: boolean) {
